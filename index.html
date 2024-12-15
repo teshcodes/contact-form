@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="form.js" defer></script>
+
+</head>
+
+<body>
+
+  <form id="contactForm" class="contact-form">
+
+    <div class="contact-us">Contact Us</div>
+
+    <div class="firstlast-name">
+    <div class="input-group firstname">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+    </div>
+
+    <div class="input-group lastname">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lasttName" placeholder="Enter your last name" required>
+    </div>
+    </div>
+
+    <div class="input-group email">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="input-group query-type">
+      <label class="query-type">Query Type</label>
+    </div>
+
+   <div class="equiry-and-request">
+    <div class="input-group enquiry">
+      <input type="radio" id="generalEnquiry" name="queryType" value="General Enquiry" required
+        class="query-radio general-input">
+      <label for="generalEnquiry" class="query-label">General Enquiry</label>
+    </div>
+
+    <div class="input-group request">
+      <input type="radio" id="supportRequest" name="queryType" value="Support Request" required
+        class="query-radio support-input">
+      <label for="supportRequest" class="query-label">Support Request</label>
+    </div>
+    </div>
+
+    <div class="input-group message">
+      <label for="message" class="message-box">Message</label>
+      <textarea id="message" name="message" placeholder="Enter your message" class="message-area"></textarea>
+    </div>
+
+    <div class="input-group consent">
+
+      <input type="checkbox" id="consent" name="consent" required>
+      <label class="consent-contact">I consent to being contacted by the team</label>
+    </div>
+
+    <button class="submit-button" type="submit">Submit</button>
+
+  </form>
+</body>
+
+</html>
