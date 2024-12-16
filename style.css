@@ -74,6 +74,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     width: 115%;
+    transition: background-color 0.3s ease;
 }
 
 /* Styling for the 'Support Request' option */
@@ -86,6 +87,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     width: 115%;
+    transition: background-color 0.3s ease;
 }
 
 /* General styling for query labels */
@@ -200,10 +202,16 @@ button {
     background-color: hsl(169, 82%, 27%);
     border: none;
     border-radius: 4px;
+    margin-bottom: 0px;
     cursor: pointer;
+     
+}
+
+.submit-button {
+    justify-self: center;
     text-align: center;
-    width: 75%;
-    max-width: 75%;
+    width: 100%;
+    max-width: 215px;
 }
 
 /* Hover effect for the submit button */
@@ -229,22 +237,74 @@ input[type="checkbox"].error {
 .error-message {
     color: red;
     font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-align: left;
+    max-width: 210px;
+    display: inline-block;
+    justify-self: center;
 }
 
 .success-toast {
     position: fixed;
-    top: 0;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     background-color: hsl(187, 24%, 22%);
     color: white;
-    padding: 1em;
-    border-radius: 5px;
+    padding: 1em 1em;
+    border-radius: 10px;
     z-index: 1000;
-    width: 90%;
+    width: 49%;
     max-width: 500px;
-    text-align: center;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    align-items: center;
+}
+
+.icon-and-message {
+    display: flex;
+}
+
+.success-icon {
+    width: 16px;
+    height: 24px;
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+.success-text {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.toast-message {
+    color: hsl(148, 38%, 91%);
+    font-size: 13px;
     margin-top: 10px;
+    opacity: 0.8;
+}
+
+strong {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Error state for inputs */
+input.error, textarea.error {
+    border-color: hsl(0, 66%, 54%);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* Invalid state styling for browsers' built-in validation */ 
+input:invalid { 
+    border: 2px solid hsl(0, 66%, 54%); 
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); 
+}
+
+.attribution {
+    margin-top: 20px;
+    justify-self: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -278,7 +338,6 @@ input[type="checkbox"].error {
     .input-group {
         text-align: left;
         width: 100%;
-        /* max-width: 210px; */
         display: block;
         justify-self: start;
         margin-left: 2pc;
@@ -353,11 +412,38 @@ input[type="checkbox"].error {
         opacity: 0.5;
     }
 
-    .submit-button {
-        margin-left: 2.2pc;
-        width: 100%;
-        max-width: 30.6pc;
+    button {
+        padding: 10px 20px;
+        font-size: 13px;
+        color: #f5f6f5;
+        background-color: hsl(169, 82%, 27%);
+        border: none;
+        border-radius: 4px;
+        margin-bottom: 0px;
+        margin-left: 2pc;
+        cursor: pointer;
+         
     }
+
+    .submit-button {
+        justify-self: center;
+        text-align: center;
+        width: 100%;
+        max-width: 494px;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 0.6em;
+        margin-top: -10px;
+        margin-left: 2pc;
+        margin-bottom: 15px;
+        text-align: left;
+        max-width: 300px;
+        display: inline-block;
+        justify-self: start;
+    }
+
 }
 
 @media screen and (min-width: 1440px) {

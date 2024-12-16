@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
@@ -17,42 +16,43 @@
 <body>
 
   <form id="contactForm" class="contact-form">
-
     <div class="contact-us">Contact Us</div>
 
     <div class="firstlast-name">
-    <div class="input-group firstname">
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
-    </div>
+      <div class="input-group firstname">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required
+          aria-required="true">
+      </div>
 
-    <div class="input-group lastname">
-      <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" name="lasttName" placeholder="Enter your last name" required>
-    </div>
+      <div class="input-group lastname">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lasttName" placeholder="Enter your last name" required
+          aria-required="true">
+      </div>
     </div>
 
     <div class="input-group email">
       <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true">
     </div>
 
     <div class="input-group query-type">
       <label class="query-type">Query Type</label>
     </div>
 
-   <div class="equiry-and-request">
-    <div class="input-group enquiry">
-      <input type="radio" id="generalEnquiry" name="queryType" value="General Enquiry" required
-        class="query-radio general-input">
-      <label for="generalEnquiry" class="query-label">General Enquiry</label>
-    </div>
+    <div class="equiry-and-request">
+      <div class="input-group enquiry">
+        <input type="radio" id="generalEnquiry" name="queryType" value="General Enquiry" required
+          class="query-radio general-input">
+        <label for="generalEnquiry" class="query-label">General Enquiry</label>
+      </div>
 
-    <div class="input-group request">
-      <input type="radio" id="supportRequest" name="queryType" value="Support Request" required
-        class="query-radio support-input">
-      <label for="supportRequest" class="query-label">Support Request</label>
-    </div>
+      <div class="input-group request">
+        <input type="radio" id="supportRequest" name="queryType" value="Support Request" required
+          class="query-radio support-input">
+        <label for="supportRequest" class="query-label">Support Request</label>
+      </div>
     </div>
 
     <div class="input-group message">
@@ -61,14 +61,21 @@
     </div>
 
     <div class="input-group consent">
-
-      <input type="checkbox" id="consent" name="consent" required>
-      <label class="consent-contact">I consent to being contacted by the team</label>
+      <input type="checkbox" id="consentCheckbox" name="consent" class="custom-checkbox">
+      <label for="consentCheckbox" class="consent-contact"> 
+        I consent to being contacted by the team
+      </label>
     </div>
+    <div id="consentError" class="error-message" style="display: none;"></div>
 
     <button class="submit-button" type="submit">Submit</button>
 
   </form>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/teshcodes/contact-form">teshcodes</a>.
+  </div>
 </body>
 
 </html>
