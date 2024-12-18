@@ -2,6 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
     const consentCheckbox = document.getElementById("consentCheckbox");
     const consentError = document.getElementById("consentError");
+    const messageField = document.getElementById('message'); 
+    const messageError = document.getElementById('messageError');
+
+    // Create error message element for query type 
+    const queryTypeError = document.createElement('div'); 
+    queryTypeError.className = 'error-message query-type-error'; 
+    queryTypeError.style.display = 'none'; // Hide initially 
+    document.querySelector('.equiry-and-request').appendChild(queryTypeError); // Append to parent element
 
     form.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -11,21 +19,54 @@ document.addEventListener("DOMContentLoaded", function () {
         // Remove all existing error messages 
         form.querySelectorAll(".error-message").forEach(el => el.style.display= "none");
 
-        // Check each required input 
-        form.querySelectorAll("[required]").forEach(input => {
-            if (!input.value) {
-                showError(input, "This field is required");
-                valid = false;
-            } else if (input.type === "text" && !validateName(input.value)) {
-                showError(input, "Enter a valid name");
-                valid = false
-            } else if (input.type === "email" && !validateEmail(input.value)) {
-                showError(input, "Enter a valid email address");
-                valid = false;
-            } else {
-                clearError(input);
-            }
-        });
+        // Example usage of validateName and validateEmail 
+        const firstName = document.getElementById("firstName"); 
+        const lastName = document.getElementById("lastName"); 
+        const email = document.getElementById("email");
+        const queryType = form.querySelector('input[name="queryType"]:checked');
+        const message = messageField.value; 
+        
+        // Validate first name
+        if (!validateName(firstName.value)) { 
+            showError(firstName, 'This field is required'); 
+            valid = false; 
+        } else { 
+            clearError("firstName");
+        }
+
+        // Validate last name
+        if (!validateName(lastName.value)) { 
+            showError(lastName, 'This field is required'); 
+            valid = false; 
+        } else { 
+            clearError(lastName); 
+        }
+
+        // Validate email
+        if (!validateEmail(email.value)) { 
+            showError(email, 'Please enter a valid email address'); 
+            valid = false
+        } else { 
+            clearError(email); 
+        }
+
+        // Validate query type
+        if (!queryType) { 
+            queryTypeError.innerText = 'Please select a query type'; 
+            queryTypeError.style.display = 'block'; 
+            valid = false; 
+        } else { 
+            queryTypeError.style.display = 'none'; 
+        } 
+
+        // Validate message
+        if (!message.trim()) { 
+            messageError.style.display = "block"; 
+            messageError.innerText = "This field is required"; 
+            valid = false; 
+        } else { 
+            messageError.style.display = "none"; 
+        }
 
         // Check the consent checkbox 
         if (!consentCheckbox.checked) {
@@ -42,23 +83,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    function showError(input, message) {
-        const error = document.createElement("div"); 
-        error.className = "error-message"; 
-        error.innerText = message; 
-        input.parentElement.appendChild(error); 
-        input.classList.add("error"); 
-        input.setAttribute("aria-invalid", "true");
+     function showError(input, message) { 
+        const error = input.nextElementSibling; 
+        if (!error || !error.classList.contains('error-message')) { 
+            const newError = document.createElement('div'); 
+            newError.className = 'error-message'; 
+            newError.innerText = message; 
+            input.parentElement.appendChild(newError); 
+        } else { 
+            error.innerText = message; 
+            error.style.display = 'block'; 
+        } 
+        input.classList.add('error'); 
+        input.setAttribute('aria-invalid', 'true');
     }
     
 
-    function clearError(input) {
-        const error = input.parentElement.querySelector(".error-message"); 
-        if (error) { 
-            error.remove(); 
+    function clearError(input) { 
+        const error = input.nextElementSibling; 
+        if (error && error.classList.contains('error-message')) { 
+            error.style.display = 'none'; 
         } 
-        input.classList.remove("error"); 
-        input.removeAttribute("aria-invalid");
+        input.classList.remove('error'); 
+        input.removeAttribute('aria-invalid'); 
     }
 
 

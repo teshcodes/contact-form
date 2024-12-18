@@ -75,3 +75,487 @@ First Name
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Basic styling for the body, including margin and background color */
+body {
+    margin: 30px 15px;
+    background-color: hsl(148, 38%, 91%);
+}
+
+/* Font-face definition for custom font */
+@font-face {
+    font-family: Karla;
+    src: url("assets/fonts/static/karla-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Styling for the main contact form */
+.contact-form {
+    background-color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 20px 0px;
+    border-radius: 10px;
+}
+
+/* Styling for the 'Contact Us' heading */
+.contact-us {
+    font-weight: bold;
+    font-size: 25px;
+    opacity: 0.8;
+    margin-left: -5.5pc;
+}
+
+/* General styling for input groups, including margin and alignment */
+.input-group {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+    max-width: 190px;
+    display: inline-block;
+    justify-self: center;
+}
+
+/* Specific styling for the first name input group */
+.input-group.firstname {
+    margin-left: -20px;
+    display: block;
+    cursor: pointer;
+    width: 115%;
+}
+
+/* Specific styling for the last name input group */
+.input-group.lastname {
+    margin-top: 15px;
+    margin-left: -20px;
+    display: block;
+    cursor: pointer;
+    width: 115%;
+}
+
+/* Specific styling for the email input group */
+.input-group.email {
+    margin-top: 3px;
+    margin-bottom: 0px;
+    margin-left: -20px;
+    cursor: pointer;
+    width: 115%;
+}
+
+/* Styling for the 'General Enquiry' option */
+.input-group.enquiry {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    border: 1.3px solid hsl(186, 15%, 59%);
+    padding: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 115%;
+    transition: background-color 0.3s ease;
+}
+
+/* Styling for the 'Support Request' option */
+.input-group.request {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    border: 1.3px solid hsl(186, 15%, 59%);
+    padding: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 115%;
+    transition: background-color 0.3s ease;
+}
+
+/* General styling for query labels */
+.query-label {
+    margin-top: 3px;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+/* General styling for labels */
+label {
+    display: block;
+    font-size: 26px;
+    opacity: 0.8;
+    font-size: 16px;
+}
+
+/* Styling for the message input group */
+.input-group.message {
+    margin-top: 7px;
+    width: 115%;
+}
+
+/* Styling for the consent input group */
+.input-group.consent {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    max-width: 215px;
+}
+
+/* Styling for the consent label */
+label.consent-contact {
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+/* Specific styling for the message label */
+label.message-box {
+    margin-left: -13px;
+}
+
+/* Styling for text, email, and textarea inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 115%;
+    padding: 13px;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 1.3px solid hsl(186, 15%, 59%);
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Styling for the selected state of radio buttons */
+input[type="radio"]:checked+label:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    right: 8.25pc;
+    border-radius: 100%;
+    background-color: hsl(169, 82%, 27%);
+}
+
+/* Styling for the message textarea */
+.message-area {
+    width: 115%;
+    height: 200px;
+    margin-left: -13px;
+}
+
+/* General styling for radio buttons */
+input[type="radio"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Specific styling for the query type label */
+.query-type {
+    display: block;
+    margin-left: -4.2pc;
+}
+
+/* Default font weight for query type label */
+.query-type.label {
+    font-weight: normal;
+}
+
+/* Styling for checkbox */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* General styling for query radio buttons */
+.query-radio {
+    width: 30px;
+    height: 18px;
+    opacity: 0.3;
+}
+
+.query-type-error {
+    position: relative;
+    margin-left: 35px;
+    bottom: 7px;
+    border: 2px solid green;
+    width: 150px;
+    justify-self: start;
+}
+
+
+/* Styling for the submit button */
+button {
+    padding: 10px 20px;
+    font-size: 13px;
+    color: #f5f6f5;
+    background-color: hsl(169, 82%, 27%);
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 0px;
+    cursor: pointer;
+     
+}
+
+.submit-button {
+    justify-self: center;
+    text-align: center;
+    width: 100%;
+    max-width: 215px;
+}
+
+/* Hover effect for the submit button */
+button:hover {
+    background-color: hsl(169, 82%, 27%);
+}
+
+/* Hover effect for inputs and textareas */
+input:hover,
+input[type="radio"],
+textarea:hover {
+    border-color: hsl(169, 82%, 27%);
+}
+
+/* Styling for error states */
+input.error,
+textarea.error,
+.query-type input.error,
+input[type="checkbox"].error {
+    border-color: hsl(0, 66%, 54%);
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-align: left;
+    display: block;
+}
+
+.success-toast {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsl(187, 24%, 22%);
+    color: white;
+    padding: 1em 1em;
+    border-radius: 10px;
+    z-index: 1000;
+    width: 49%;
+    max-width: 500px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    align-items: center;
+}
+
+.icon-and-message {
+    display: flex;
+}
+
+.success-icon {
+    width: 16px;
+    height: 24px;
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+.success-text {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.toast-message {
+    color: hsl(148, 38%, 91%);
+    font-size: 13px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+strong {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Error state for inputs */
+input.error, textarea.error {
+    border-color: hsl(0, 66%, 54%);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* Invalid state styling for browsers' built-in validation */ 
+input:invalid { 
+    border: 2px solid hsl(0, 66%, 54%); 
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); 
+}
+
+.attribution {
+    margin-top: 20px;
+    justify-self: center;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: 70px 190px;
+    }
+
+    button {
+        max-width: 30%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        margin: 6pc 14pc 6pc 14pc;
+        background-color: hsl(148, 38%, 91%);
+    }
+
+    .contact-form {
+        background-color: hsl(0, 0%, 100%);
+        text-align: start;
+        padding: 30px 0px;
+        border-radius: 10px;
+    }
+
+    .contact-us {
+        margin-left: 2pc;
+        margin-top: 15px;
+    }
+
+    .input-group {
+        text-align: left;
+        width: 100%;
+        display: block;
+        justify-self: start;
+        margin-left: 2pc;
+    }
+
+    .input-group.firstname {
+        margin-left: 2pc;
+        max-width: 210px;
+    }
+
+    .input-group.lastname {
+        margin-left: 2pc;
+        margin-top: 30px;
+        max-width: 210px;
+    }
+
+    .input-group.email {
+        margin-left: 2pc;
+        width: 100%;
+        max-width: 75%;
+    }
+
+    .firstlast-name {
+        display: flex;
+        gap: 10px;
+    }
+
+    .query-type {
+        margin-left: 1pc;
+    }
+
+    .query-label {
+        cursor: pointer;
+        width: 100%;
+        box-sizing: content-box;
+        transition: background-color 0.3s;
+    }
+
+    .equiry-and-request {
+        display: flex;
+        margin-top: -9px;
+    }
+
+    .input-group.enquiry {
+        width: 50%;
+        max-width: 210px;
+    }
+
+    .input-group.request {
+        width: 50%;
+        margin-left: 13px;
+        max-width: 210px;
+    }
+
+    .input-group.message {
+        margin-left: 2.8pc;
+    }
+
+    .message-area {
+        width: 30.8pc;
+    }
+
+    .input-group.consent {
+        display: flex;
+        gap: 7px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    label.consent-contact {
+        font-size: 14px;
+        opacity: 0.5;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 13px;
+        color: #f5f6f5;
+        background-color: hsl(169, 82%, 27%);
+        border: none;
+        border-radius: 4px;
+        margin-bottom: 0px;
+        margin-left: 2pc;
+        cursor: pointer;
+         
+    }
+
+    .submit-button {
+        justify-self: center;
+        text-align: center;
+        width: 100%;
+        max-width: 494px;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 0.6em;
+        margin-top: -10px;
+        margin-left: 2pc;
+        margin-bottom: 15px;
+        text-align: left;
+        max-width: 300px;
+        display: inline-block;
+        justify-self: start;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .input-group.email {
+        max-width: 43%;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .input-group.email {
+        max-width: 20%;
+    }
+}
