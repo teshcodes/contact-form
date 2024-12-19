@@ -212,6 +212,16 @@ button:hover {
     display: block;
 }
 
+@keyframes fadeIn { 
+    from { 
+        opacity: 0; 
+    } 
+    
+    to { 
+        opacity: 2; 
+    } 
+}
+
 .success-toast {
     position: fixed;
     top: 10px;
@@ -226,6 +236,7 @@ button:hover {
     text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     align-items: center;
+    animation: fadeIn 0.7s ease-in-out;
 }
 
 .icon-and-message {
