@@ -2,12 +2,12 @@
 body {
     margin: 30px 15px;
     background-color: hsl(148, 38%, 91%);
-    font-family: 'Karla', sans-serif;
+    /* font-family: 'Karla', sans-serif; */
 }
 
 /* Font-face definition for custom font */
 @font-face {
-    font-family: 'Karla';
+    font-family: Karla;
     src: url("assets/fonts/static/karla-Italic-VariableFont_wght.ttf") format("truetype");
     font-weight: normal;
     font-style: italic;
@@ -16,7 +16,7 @@ body {
 /* Styling for the main contact form */
 .contact-form {
     background-color: hsl(0, 0%, 100%);
-    text-align: center;
+    text-align: start;
     padding: 20px 0px;
     border-radius: 10px;
     margin: auto;
@@ -26,14 +26,14 @@ body {
 /* Styling for the 'Contact Us' heading */
 .contact-us {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
     opacity: 0.8;
     margin: 10px 0;
 }
 
 /* General styling for input groups */
 .input-group {
-    margin-top: 15px;
+    margin-top: 30px;
     margin-bottom: 15px;
     text-align: left;
     display: block;
@@ -42,10 +42,22 @@ body {
 /* Specific input group stylings */
 .input-group.firstname,
 .input-group.lastname,
-.input-group.email,
+.input-group.email {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.input-group textarea,
+input[type="email"],
+input[type="text"] {
+    width: calc(100% - 26px);
+}
+
 .input-group.enquiry,
 .input-group.request {
-    max-width: 100%;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -59,16 +71,17 @@ body {
 
 .input-group input,
 .input-group textarea {
-    /* width: calc(100% - 26px); */
-    padding: 10px;
+    padding: 13px;
     font-size: 16px;
     border: 1.3px solid hsl(186, 15%, 59%);
     border-radius: 5px;
     margin-top: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .input-group textarea {
-    width: calc(100% - 26px);
+    padding-bottom: 10pc;
 }
 
 
@@ -77,7 +90,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px;
+    padding: 13px;
     border: 1.3px solid hsl(186, 15%, 59%);
     border-radius: 5px;
     margin-top: 10px;
@@ -85,12 +98,83 @@ body {
     transition: background-color 0.3s ease;
 }
 
+/* Style the radio buttons */ 
+input[type="radio"] { 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    width: 20px; 
+    height: 20px;  
+    border-radius: 50%; 
+    margin-top: -1px;
+    padding: 0px;
+    outline: none; 
+    cursor: pointer; 
+    transition: background 0.3s ease;
+    display: inline-block; 
+    position: relative; 
+} 
+
+input[type="radio"]:checked { 
+    background-color: hsl(169, 82%, 27%); /* Green background when checked */ 
+} 
+
+input[type="radio"]:checked::after { 
+    content: ''; 
+    display: absolute; 
+    width: 4px; 
+    height: 4px; 
+    border-radius: 50%; 
+    background-color: hsl(169, 82%, 27%); /* Green dot inside */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+/* Style the checkbox */ 
+input[type="checkbox"] { 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    width: 5px;
+    height: 5px; 
+    outline: none; 
+    cursor: pointer; 
+    transition: background 0.3s ease; 
+    position: relative;
+    padding: 5px; 
+    border-radius: 15%;
+    margin-top: -2px;
+    background-color: white;
+ } 
+ 
+ input[type="checkbox"]:checked { 
+    background-color: hsl(169, 82%, 27%); 
+} 
+
+input[type="checkbox"]:checked::after { 
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    width: 4px; 
+    height: 9px;
+    border: solid hsl(148, 38%, 91%);
+    border-width: 0 2px 2px 0; 
+    transform: translate(-50%, -50%) rotate(45deg)
+}
+
 /* Styling for labels */
 label {
     display: block;
-    margin-bottom: 5px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.query-label { 
+    font-size: 16px;  
 }
 
 .input-group.consent {
@@ -134,14 +218,13 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
     background-color: hsl(187, 24%, 22%);
-    color: white;
+    color: hsl(148, 38%, 91%);
     padding: 1em;
     border-radius: 10px;
     z-index: 1000;
     max-width: 500px;
     text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    display: flex;
     align-items: center;
 }
 
@@ -150,24 +233,26 @@ button:hover {
 }
 
 .success-icon {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     margin-right: 10px;
+    margin-top: 4px;
 }
 
 .success-text {
-    font-size: 16px;
-    line-height: 1.4;
+    margin-top: 3px;
+    font-size: 10px;
+    line-height: 1.2;
 }
 
 .toast-message {
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 10px;
     opacity: 0.8;
 }
 
 strong {
-    font-size: 18px;
+    font-size: 15px;
     opacity: 0.9;
 }
 
@@ -183,15 +268,16 @@ input.error, textarea.error {
 }
 
 /* Responsive Styles: */
-/* Mobile (320px - 425px): */
+/* Mobile (320px - 450px): */
 
-@media screen and (max-width: 425px) { 
+@media screen and (max-width: 450px) { 
     body { 
         margin: 10px; 
     } 
     
     .contact-form { 
-        padding: 15px; 
+        padding: 20px; 
+        margin: auto;
     } 
 
     .contact-us { 
@@ -238,17 +324,46 @@ input.error, textarea.error {
     } 
     
     .contact-form { 
-        padding: 20px; 
+        padding: 50px; 
     } 
     
     .contact-us { 
         font-size: 22px; 
-    } 
+    }
+
+    .input-group.firstname,
+    .input-group.lastname {
+        width: 70%; 
+    }
+
+    .input-group.firstname,
+    .input-group.lastname,
+    .input-group.email {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.firstlast-name {
+    display: flex;
+    gap: 25px;
+}
+    
+    .input-group.enquiry,
+    .input-group.request {
+    max-width: 100%;
+}
     
     .input-group input, 
     .input-group textarea { 
-        font-size: 15px; 
-    } 
+        font-size: 15px;
+        padding: 13px; 
+    }
+    
+.input-group textarea  {
+ width: 105%;
+}
     
     button {
         font-size: 15px;
@@ -260,11 +375,15 @@ input.error, textarea.error {
 @media screen and (min-width: 1024px) { 
     body { 
         margin: 50px;
+
      } 
      
      .contact-form { 
-        padding: 25px; 
-        text-align: start; 
+        text-align: start;
+        padding: 30px 40px;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 600px;
     } 
     
     .contact-us { 
@@ -272,7 +391,9 @@ input.error, textarea.error {
     }
     
     .input-group { 
-        margin-right: 50px; 
+        margin-right: 50px;
+        margin-top: 20px;
+        margin-bottom: 15px;
     }
 
     .firstlast-name {
@@ -286,8 +407,17 @@ input.error, textarea.error {
     
     .input-group.enquiry, 
     .input-group.request { 
-        max-width: 45%; 
-    } 
+        width: 70%; 
+    }
+
+.equiry-and-request {
+    display: flex;
+    gap: 20px;
+}
+    
+    .input-group textarea {
+        padding-bottom: 3pc;
+    }
     
     .input-group.consent { 
         max-width: 90%; 
@@ -320,11 +450,6 @@ input.error, textarea.error {
     .contact-us { 
         font-size: 26px; 
     } 
-
-    .input-group { 
-        margin-left: 100px; 
-        margin-right: 100px; 
-    }
     
     .input-group input, 
     .input-group textarea { 
@@ -339,11 +464,6 @@ input.error, textarea.error {
     .input-group.consent { 
         max-width: 90%; 
     } 
-    
-    .input-group.message { 
-        margin-left: 100px; 
-        margin-right: 100px;
-    }
 
     .message-area { 
         width: 100%; 
