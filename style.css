@@ -43,7 +43,7 @@ body {
 .input-group.firstname,
 .input-group.lastname,
 .input-group.email {
-    max-width: 100%;
+    max-width: 120%;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -57,7 +57,7 @@ input[type="text"] {
 
 .input-group.enquiry,
 .input-group.request {
-    max-width: 90%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -281,7 +281,7 @@ input.error, textarea.error {
 /* Responsive Styles: */
 /* Mobile (320px - 450px): */
 
-@media screen and (max-width: 450px) { 
+@media screen and (max-width: 426px) { 
     body { 
         margin: 10px; 
     } 
@@ -372,10 +372,6 @@ input.error, textarea.error {
         padding: 13px; 
     }
     
-.input-group textarea  {
- width: 105%;
-}
-    
     button {
         font-size: 15px;
     }
@@ -386,15 +382,14 @@ input.error, textarea.error {
 @media screen and (min-width: 1024px) { 
     body { 
         margin: 50px;
-
-     } 
+    } 
      
-     .contact-form { 
+    .contact-form { 
         text-align: start;
         padding: 30px 40px;
-    border-radius: 10px;
-    margin: auto;
-    max-width: 600px;
+        border-radius: 10px;
+        margin: auto;
+        max-width: 600px;
     } 
     
     .contact-us { 
@@ -418,16 +413,17 @@ input.error, textarea.error {
     
     .input-group.enquiry, 
     .input-group.request { 
-        width: 70%; 
+        width: 100%;
     }
 
-.equiry-and-request {
-    display: flex;
-    gap: 20px;
-}
+    .equiry-and-request {
+        display: flex;
+        gap: 20px;
+    }
     
     .input-group textarea {
         padding-bottom: 3pc;
+        width: 104%;
     }
     
     .input-group.consent { 
